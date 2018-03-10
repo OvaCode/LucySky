@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LucySkyAdmin", "LucySkyAdmin.csproj", "{04B4EEF5-9465-4951-BEE7-C0713260DAC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LucySky.Common", "LucySky.Common\LucySky.Common.csproj", "{89B9716A-C4F0-422C-85C7-E14D25EF8323}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LucySky.Console", "LucySky.Console\LucySky.Console.csproj", "{1E046AA4-4AE6-4C96-AB8F-E947FBB5863A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04B4EEF5-9465-4951-BEE7-C0713260DAC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04B4EEF5-9465-4951-BEE7-C0713260DAC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04B4EEF5-9465-4951-BEE7-C0713260DAC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04B4EEF5-9465-4951-BEE7-C0713260DAC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89B9716A-C4F0-422C-85C7-E14D25EF8323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89B9716A-C4F0-422C-85C7-E14D25EF8323}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89B9716A-C4F0-422C-85C7-E14D25EF8323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89B9716A-C4F0-422C-85C7-E14D25EF8323}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E046AA4-4AE6-4C96-AB8F-E947FBB5863A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E046AA4-4AE6-4C96-AB8F-E947FBB5863A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E046AA4-4AE6-4C96-AB8F-E947FBB5863A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E046AA4-4AE6-4C96-AB8F-E947FBB5863A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

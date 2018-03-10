@@ -1,0 +1,51 @@
+﻿@* 
+    1. Add form
+    2. Add [POST] AddSentence action
+    3. Create a fake analyzer
+    4. Extend SentenceViewModel with IList<string> Entities
+    5. Show analyzed entities in the View
+    6. Refactor Entity to a full object NerEntity with properties[Word, Class, Value]
+    7. Refactor solution to accept new NerEntity object
+    8. Add CSS styles to visualize entities (see admin.css)
+
+    9. Add IClassificationRule interface
+    10. Add IEntityClassifier
+    11. Implement Classification rules for date
+    12. Implement Classifier
+    13. Refactor code to use new Classifier which applies new Classification rules
+    14. Extend rules for other classes @person, @location, @currency, etc.
+*@
+@using LucySkyAdmin.Models.AdminViewModels
+@model LucySkyAdmin.Models.AdminViewModels.SentenceViewModel
+
+@{
+    
+}
+<div class="sentence-root">
+    <form method="post">
+        <label asp-for="Sentence"></label>
+        <input asp-for="Sentence" placeholder="Type a sentence ..." type="text" />
+        <input asp-for="Id" type="hidden" />
+        <input type="submit" value="Analyze" />
+    </form>
+    <div class="sentence-analyzed">
+        <h2>Analyzed sentence</h2>
+        <h3>Original sentence</h3>
+        <div class="sentence-original">
+            
+            @Model.Sentence
+        </div>
+        
+        @foreach(NerEntity e in Model.Entities)
+        {
+            <div class="entity">
+                <div class="entity-word">@e.Word</div> 
+                <div class="entity-class">@e.Class</div> 
+                <div class="entity-value">@e.Value</div> 
+            </div>
+
+        }
+    </div>
+</div>
+
+
