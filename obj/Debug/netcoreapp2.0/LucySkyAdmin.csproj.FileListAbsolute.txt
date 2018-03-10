@@ -1,0 +1,13 @@
+/Users/itom/Desktop/Projects/LucySkyAdmin/bin/Debug/netcoreapp2.0/app.db
+/Users/itom/Desktop/Projects/LucySkyAdmin/bin/Debug/netcoreapp2.0/LucySkyAdmin.deps.json
+/Users/itom/Desktop/Projects/LucySkyAdmin/bin/Debug/netcoreapp2.0/LucySkyAdmin.runtimeconfig.json
+/Users/itom/Desktop/Projects/LucySkyAdmin/bin/Debug/netcoreapp2.0/LucySkyAdmin.runtimeconfig.dev.json
+/Users/itom/Desktop/Projects/LucySkyAdmin/bin/Debug/netcoreapp2.0/LucySkyAdmin.dll
+/Users/itom/Desktop/Projects/LucySkyAdmin/bin/Debug/netcoreapp2.0/LucySkyAdmin.pdb
+/Users/itom/Desktop/Projects/LucySkyAdmin/obj/Debug/netcoreapp2.0/LucySkyAdmin.csprojResolveAssemblyReference.cache
+/Users/itom/Desktop/Projects/LucySkyAdmin/obj/Debug/netcoreapp2.0/LucySkyAdmin.csproj.CoreCompileInputs.cache
+/Users/itom/Desktop/Projects/LucySkyAdmin/obj/Debug/netcoreapp2.0/UserSecretsAssemblyInfo.cs
+/Users/itom/Desktop/Projects/LucySkyAdmin/obj/Debug/netcoreapp2.0/LucySkyAdmin.AssemblyInfoInputs.cache
+/Users/itom/Desktop/Projects/LucySkyAdmin/obj/Debug/netcoreapp2.0/LucySkyAdmin.AssemblyInfo.cs
+/Users/itom/Desktop/Projects/LucySkyAdmin/obj/Debug/netcoreapp2.0/LucySkyAdmin.dll
+/Users/itom/Desktop/Projects/LucySkyAdmin/obj/Debug/netcoreapp2.0/LucySkyAdmin.pdb

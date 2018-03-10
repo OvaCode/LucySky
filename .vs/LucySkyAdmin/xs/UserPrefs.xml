@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{04B4EEF5-9465-4951-BEE7-C0713260DAC2}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/AdminController.cs">
+    <Files>
+      <File FileName="Views/Admin/AddSentence.cshtml" Line="34" Column="31" />
+      <File FileName="Models/AdminViewModels/NerEntity.cs" Line="16" Column="25" />
+      <File FileName="Models/AdminViewModels/IEntityClassifier.cs" Line="21" Column="50" />
+      <File FileName="Models/AdminViewModels/IClassificationRule.cs" Line="26" Column="13" />
+      <File FileName="Models/AdminViewModels/DateTimeClassificationRule.cs" Line="19" Column="23" />
+      <File FileName="Models/AdminViewModels/EntityClassifier.cs" Line="15" Column="10" />
+      <File FileName="Models/AdminViewModels/OtherClassificationRule.cs" Line="83" Column="26" />
+      <File FileName="Models/AdminViewModels/BaseClassificationRule.cs" Line="38" Column="52" />
+      <File FileName="Controllers/AdminController.cs" Line="17" Column="15" />
+      <File FileName="Models/AdminViewModels/NerFakeAnalyzer.cs" Line="12" Column="84" />
+      <File FileName="Models/AdminViewModels/NerAnalyzer.cs" Line="18" Column="13" />
+      <File FileName="Models/AdminViewModels/INerAnalyzer.cs" Line="9" Column="46" />
+      <File FileName="Models/AdminViewModels/SentenceViewModel.cs" Line="26" Column="39" />
+      <File FileName="wwwroot/css/admin.css" Line="1" Column="1" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="38" Column="103" />
+      <File FileName="Views/Admin/Index.cshtml" Line="12" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.LucySkyAdmin PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <DisabledProjects>
+    <String>LucySky.Console/LucySky.Console.csproj</String>
+    <String>LucySky.Common/LucySky.Common.csproj</String>
+  </DisabledProjects>
+</Properties>
