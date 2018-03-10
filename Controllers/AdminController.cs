@@ -28,7 +28,10 @@ namespace LucySkyAdmin.Controllers
         {
             SentenceViewModel model = new SentenceViewModel();
 
+            var m = model;
+
             return View(model);
+            // here is the change
         }
 
         [HttpPost]
