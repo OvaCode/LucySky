@@ -22,6 +22,7 @@ namespace LucySkyAdmin.Models.AdminViewModels
             IList<string> sentenceParts = new List<string>();
             var addedIndex = 0;
 
+
             // Fill classified and not classified into an array
             foreach(Match m in matches)
             {
@@ -39,10 +40,14 @@ namespace LucySkyAdmin.Models.AdminViewModels
                     endIndex = m.Index;
                 }
 
-                // Take a substring which prior the found classified fragment
-                var plainText = sentence.Substring(startIndex, endIndex - startIndex);
-                // a substring represents not classified fragment so, store it as a whole into the array
-                sentenceParts.Add(plainText);
+                if(sentence.Length != endIndex && startIndex != 0)
+                {
+                    // Take a substring which prior the found classified fragment
+                    var plainText = sentence.Substring(startIndex, endIndex - startIndex);
+                    // a substring represents not classified fragment so, store it as a whole into the array
+                    sentenceParts.Add(plainText);
+                }
+
                 // then add found classified fragment to stay consistent
                 sentenceParts.Add(m.Value);
 

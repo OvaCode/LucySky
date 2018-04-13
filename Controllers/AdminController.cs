@@ -39,6 +39,16 @@ namespace LucySkyAdmin.Controllers
         {
             model.Entities = _analyzer.Analyze(model.Sentence);
 
+            foreach(NerEntity ent in model.Entities)
+            {
+                DateTimeTranslator translator = new DateTimeTranslator();
+
+                if(ent.Class == "@date")
+                {
+                    ent.Value = translator.Translate(ent.Value);
+                }
+            }
+
             return View(model);
         }
     }

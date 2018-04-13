@@ -35,7 +35,7 @@ namespace LucySkyAdmin.Models.AdminViewModels
         /// Gets the class tag.
         /// </summary>
         /// <value>The class tag.</value>
-        public virtual string ClassTag => "@other";
+        public virtual string ClassTag => "other";
 
         /// <summary>
         /// Applies the rule.
@@ -48,16 +48,16 @@ namespace LucySkyAdmin.Models.AdminViewModels
 
             foreach (var pattern in _patterns)
             {
-                MatchCollection matches = Regex.Matches(result, pattern);
+                MatchCollection matches = Regex.Matches(result, pattern, RegexOptions.IgnoreCase);
                 var addedLength = 0;
 
                 foreach (Match m in matches)
                 {
                     var index = m.Index + addedLength;
                     var originalSequence = result.Substring(index, m.Length);
-                    var newSequence = string.Format("[{0}|{1}|{2}]", 
+                    var newSequence = string.Format("[{0}|@{1}|{2}]", 
                                                     originalSequence, 
-                                                    ClassTag, 
+                                                    ClassTag.ToLower(), 
                                                     originalSequence);
                     var seqenceLength = newSequence.Length;
 

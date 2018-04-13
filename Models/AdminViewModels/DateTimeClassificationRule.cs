@@ -9,16 +9,16 @@ namespace LucySkyAdmin.Models.AdminViewModels
     /// </summary>
     public class DateTimeClassificationRule:BaseClassificationRule
     {
-        readonly string _dateNumericFormatPattern =
+        private readonly string _dateNumericFormatPattern =
             @"(\d{4})(-|.|\/)(\d{1,2})(-|.|\/)(\d{1,2})|(\d{1,2})(-|.|\/)(\d{1,2})(-|.|\/)(\d{4})";
-        readonly string _dateTextFormatPattern =
+        private readonly string _dateTextFormatPattern =
             @"(now|yesterday|today|tomorrow|(in\s+(\d{1,}|few|several|one|two|three|four|five|six|seven|eight|nine|ten)\s+(days|day|weeks|week|year|years))|((\d{1,}|few|several|one|two|three|four|five|six|seven|eight|nine|ten)\s+(days|day|weeks|week|year|years)\s+(ago|before|after))|((on|next|last|previous|before|after)\s+(week|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)|(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)|(January|February|March|April|May|June|July|September|October|November|December)))";
 
         /// <summary>
         /// Gets the class tag.
         /// </summary>
         /// <value>The class tag.</value>
-        public override string ClassTag => "@date";
+        public override string ClassTag => "date";
 
         /// <summary>
         /// Applies the rule.

@@ -1,0 +1,2 @@
+﻿1. Zdvojeny vypis u @date classifikace pokud je na prvnim miste.
+2. Neidentifikuje @date class pokud je zapsan s velkym pocatecnim pismenem aka Tomorrow - fixed

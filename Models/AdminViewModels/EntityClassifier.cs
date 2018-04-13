@@ -16,6 +16,7 @@ namespace LucySkyAdmin.Models.AdminViewModels
         {
             _rules = new List<IClassificationRule>();
         }
+
         public EntityClassifier(IList<IClassificationRule> rules)
         {
             _rules = rules;
@@ -26,10 +27,7 @@ namespace LucySkyAdmin.Models.AdminViewModels
         /// Gets the rules.
         /// </summary>
         /// <value>The rules.</value>
-        public IList<IClassificationRule> Rules
-        {
-            get => _rules;
-        }
+        public IList<IClassificationRule> Rules => _rules;
 
         public IList<NerEntity> Classify(string originalSentence)
         {
@@ -42,7 +40,7 @@ namespace LucySkyAdmin.Models.AdminViewModels
                 classifiedSentence = rule.ApplyRule(classifiedSentence);
             }
 
-            var matches = Regex.Matches(classifiedSentence, ENTITIES_REGEX);
+            var matches = Regex.Matches(classifiedSentence, ENTITIES_REGEX, RegexOptions.IgnoreCase);
 
             foreach (Match m in matches)
             {
