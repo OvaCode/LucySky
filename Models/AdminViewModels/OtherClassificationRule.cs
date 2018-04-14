@@ -56,6 +56,11 @@ namespace LucySkyAdmin.Models.AdminViewModels
 
             foreach(string word in words)
             {
+                if (string.IsNullOrWhiteSpace(word))
+                {
+                    continue;
+                }
+
                 if (word.StartsWith('{'))
                 {
                     result += word;
