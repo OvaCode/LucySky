@@ -13121,7 +13121,9 @@
       "Microsoft.EntityFrameworkCore >= 2.0.1",
       "Microsoft.EntityFrameworkCore.Tools >= 2.0.1",
       "Microsoft.NETCore.App >= 2.0.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.2"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.2",
+      "System.Collections >= 4.3.0",
+      "System.Collections.NonGeneric >= 4.3.0"
     ]
   },
   "packageFolders": {
@@ -13186,6 +13188,14 @@
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "2.0.1"
+          },
+          "System.Collections": {
+            "target": "Package",
+            "version": "4.3.0"
+          },
+          "System.Collections.NonGeneric": {
+            "target": "Package",
+            "version": "4.3.0"
           }
         },
         "imports": [

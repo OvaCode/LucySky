@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Text.RegularExpressions;
 
 namespace LucySkyAdmin.Models.AdminViewModels
@@ -17,52 +16,27 @@ namespace LucySkyAdmin.Models.AdminViewModels
         public override string ApplyRule(string sentence)
         {
             // Split sentence to classified and not classified fragments
-            Patterns.Add(CLASSIFIED_BLOCKS_PATTERN);
-            MatchCollection matches = Regex.Matches(sentence, Patterns[0]);
+            var tempSentence = sentence;
+            var index = 0;
+            var tempLength = 0;
+            // get the classified fragments
+            MatchCollection matches = Regex.Matches(sentence, CLASSIFIED_BLOCKS_PATTERN);
             IList<string> sentenceParts = new List<string>();
-            var addedIndex = 0;
 
-
-            // Fill classified and not classified into an array
+            // replace each classified fragment with a placeholder {0}
             foreach(Match m in matches)
             {
-                var startIndex = 0;
-                var endIndex = 0;
+                var tempInsert = "{" + index.ToString() + "}";
 
-                if(m.Index == 0)
-                {
-                    startIndex = m.Index;
-                    endIndex = m.Index + m.Length;
-                }
-                else
-                {
-                    startIndex = addedIndex;
-                    endIndex = m.Index;
-                }
-
-                if(sentence.Length != endIndex && startIndex != 0)
-                {
-                    // Take a substring which prior the found classified fragment
-                    var plainText = sentence.Substring(startIndex, endIndex - startIndex);
-                    // a substring represents not classified fragment so, store it as a whole into the array
-                    sentenceParts.Add(plainText);
-                }
-
-                // then add found classified fragment to stay consistent
                 sentenceParts.Add(m.Value);
+                tempSentence = tempSentence.Remove(m.Index - tempLength, m.Length);
+                tempSentence = tempSentence.Insert(m.Index - tempLength, tempInsert);
+                tempLength = m.Value.Length - tempInsert.Length;
 
-                // update index for next reading
-                addedIndex = m.Index + m.Length;
+                index++;
             }
 
-            if(matches.Count == 0)
-            {
-                sentenceParts.Add(sentence);
-
-                return BuildFinalSentence(sentenceParts);
-            }
-
-            return BuildFinalSentence(sentenceParts);
+            return BuildFinalSentence(tempSentence, sentenceParts);
         }
 
         /// <summary>
@@ -70,33 +44,28 @@ namespace LucySkyAdmin.Models.AdminViewModels
         /// fragments of the sentence. Here they are put into the final form.
         /// </summary>
         /// <returns>The final sentence.</returns>
-        /// <param name="parts">Parts.</param>
-        private string BuildFinalSentence(IList<string> parts)
+        /// <param name="sentence">Sentence.</param>
+        /// <param name="tempMemory">Temp memory.</param>
+        private string BuildFinalSentence(string sentence, IList<string> sentenceParts)
         {
-            var result = new StringBuilder();
+            var result = "";
+            char[] separators = { ' ', ',', '.', '?', '!', ':', ';', '/', '\\' };
+            var words = sentence.Split(separators);
+            string[] tempArray = new string[sentenceParts.Count];
+            sentenceParts.CopyTo(tempArray, 0);
 
-            foreach(var part in parts)
+            foreach(string word in words)
             {
-                // check is given part matches the classified fragment. If not process it as @other
-                if(!Regex.Match(part, Patterns[0]).Success)
+                if (word.StartsWith('{'))
                 {
-                    var words = part.Split(' ');
+                    result += word;
+                    continue;
+                }
 
-                    foreach (var word in words)
-                    {
-                        if (!string.IsNullOrWhiteSpace(word))
-                        {
-                            result.AppendFormat("[{0}|{1}|{2}]", word, ClassTag, word);
-                        }
-                    }
-                }
-                else
-                {
-                    result.AppendFormat("{0}", part);
-                }
+                result += string.Format("[{0}|@{1}|{2}]", word, ClassTag, word);
             }
 
-            return result.ToString();
+            return string.Format(result, tempArray);
         }
     }
 }
