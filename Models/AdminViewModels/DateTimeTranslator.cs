@@ -19,6 +19,18 @@ namespace LucySkyAdmin.Models.AdminViewModels
             {
                 result = DateTime.Now.AddDays(-1);
             }
+            else if (input.Equals("in two days", StringComparison.InvariantCultureIgnoreCase))
+            {
+                result = DateTime.Now.AddDays(2);
+            }
+            else if (input.Equals("in three days", StringComparison.InvariantCultureIgnoreCase))
+            {
+                result = DateTime.Now.AddDays(3);
+            }
+            else if (input.Equals("in four days", StringComparison.InvariantCultureIgnoreCase))
+            {
+                result = DateTime.Now.AddDays(4);
+            }
 
             // today, tomorrow, yesterday, day after tomorrow,  
 
