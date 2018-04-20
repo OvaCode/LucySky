@@ -45,31 +45,37 @@ namespace LucySkyAdmin.Models.AdminViewModels
         /// </summary>
         /// <returns>The final sentence.</returns>
         /// <param name="sentence">Sentence.</param>
-        /// <param name="tempMemory">Temp memory.</param>
+        /// <param name="sentenceParts">Temp memory.</param>
         private string BuildFinalSentence(string sentence, IList<string> sentenceParts)
         {
             var result = "";
+            // split sentence to words
             char[] separators = { ' ', ',', '.', '?', '!', ':', ';', '/', '\\' };
             var words = sentence.Split(separators);
+            // make a string array with classified fragments
             string[] tempArray = new string[sentenceParts.Count];
             sentenceParts.CopyTo(tempArray, 0);
 
             foreach(string word in words)
             {
+                // ignore empty strings
                 if (string.IsNullOrWhiteSpace(word))
                 {
                     continue;
                 }
-
+                // if word starts with { it means it's a classified fragment placeholder
+                // so, no action needed add it to result
                 if (word.StartsWith('{'))
                 {
                     result += word;
                     continue;
                 }
-
+                // if you get here it means the word is unclassified.
+                // make it a @other class fragment
                 result += string.Format("[{0}|@{1}|{2}]", word, ClassTag, word);
             }
 
+            // replace classified placeholders with their original values
             return string.Format(result, tempArray);
         }
     }
