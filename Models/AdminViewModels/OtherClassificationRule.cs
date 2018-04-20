@@ -31,7 +31,7 @@ namespace LucySkyAdmin.Models.AdminViewModels
                 sentenceParts.Add(m.Value);
                 tempSentence = tempSentence.Remove(m.Index - tempLength, m.Length);
                 tempSentence = tempSentence.Insert(m.Index - tempLength, tempInsert);
-                tempLength = m.Value.Length - tempInsert.Length;
+                tempLength += m.Value.Length - tempInsert.Length;
 
                 index++;
             }
